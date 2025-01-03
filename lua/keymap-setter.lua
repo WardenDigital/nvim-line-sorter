@@ -21,8 +21,8 @@ end
 
 --- Sets the keymap for the given key
 --- @param key string
---- @param type? SortType
---- @param order? SortOrder
+--- @param type SortType
+--- @param order SortOrder
 function M:set_keymap(key, type, order)
     vim.keymap.set("v", "<leader>" .. key, function() self.line_sorter:run(type, order) end,
         { noremap = true, silent = true })
